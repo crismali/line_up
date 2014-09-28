@@ -22,9 +22,10 @@ DatabaseCleaner.strategy = :truncation
 RSpec.configure do |config|
   config.before :suite do
     create_database
+    DatabaseCleaner.clean
   end
 
-  config.before do
+  config.before(:each) do
     DatabaseCleaner.clean
   end
   # rspec-expectations config goes here. You can use an alternate
@@ -110,5 +111,8 @@ def create_database
 
   ActiveRecord::Base.connection.create_table(:products) do |t|
     t.integer :position
+    t.integer :other_position
+    t.integer :order
+    t.string :name
   end
 end
