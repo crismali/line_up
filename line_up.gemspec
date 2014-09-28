@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "line_up/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "line_up"
+  spec.name          = "line-up"
   spec.version       = LineUp::VERSION
   spec.authors       = ["Michael Crismali"]
   spec.email         = ["michael.crismali@gmail.com"]
